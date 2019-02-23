@@ -1,0 +1,13 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    tty: true
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./conf.d:/etc/nginx/conf.d
+      - /etc/worldhistorymap.io/certs:/certs
+      - /data/worldhistorymap.io/tiles:/tileserver/tiles
+      - /data/worldhistorymap.io/legends:/tileserver/legends
+    ports:
+      - 443:443
