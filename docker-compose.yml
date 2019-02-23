@@ -6,30 +6,30 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./conf.d:/etc/nginx/conf.d
-      - /etc/letsencrypt/worldhistorymap.io:/etc/letsencrypt
+      - /etc/worldhistorymap.io/cert:/cert
     ports:
       - 443:443
   tileserver1:
     build: ./tileserver/
     tty: true
     volumes:
-      - /data/www/worldhistorymap.io/tiles:/tiles
-      - /data/www/worldhistorymap.io/legends:/legends
+      - /data/worldhistorymap.io/tiles:/tiles
+      - /data/worldhistorymap.io/legends:/legends
     expose:
       - "80" 
   tileserver2:
     build: ./tileserver/
     tty: true
     volumes:
-      - /data/www/worldhistorymap.io/tiles:/tiles
-      - /data/www/worldhistorymap.io/legends:/legends
+      - /data/worldhistorymap.io/tiles:/tiles
+      - /data/worldhistorymap.io/legends:/legends
     expose:
       - "80" 
   tileserver3:
     build: ./tileserver/
     tty: true
     volumes:
-      - /data/www/worldhistorymap.io/tiles:/tiles
-      - /data/www/worldhistorymap.io/legends:/legends
+      - /data/worldhistorymap.io/tiles:/tiles
+      - /data/worldhistorymap.io/legends:/legends
     expose:
       - "80" 
