@@ -11,3 +11,23 @@ services:
       - /data/worldhistorymap.io/legends:/tileserver/legends
     ports:
       - 443:443
+    restart: always
+
+  historymap-react1:
+    depends_on:
+      - nginx
+    image: worldhistorymap/historymap:react
+    restart: always
+
+  historymap-react2:
+    depends_on:
+      - nginx
+    image: worldhistorymap/historymap:react
+    restart: always
+
+  historymap-react3:
+    depends_on:
+      - nginx
+    image: worldhistorymap/historymap:react
+    restart: always
+
